@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2 class="contactus">Contact Us</h2>
+      {% if success_message %}
+      <h3 class="success-message">{{success_message}}</h3>
+      {%endif%}
+
+      <form method="POST">
+        {%csrf_token%}
+        <div class="row">
+          <div class="field">
+          <label class="label">First Name</label>  
+          <input type="text" name="firstName" placeholder="enter your first name"/>
+           {% if errors.firstName %}
+           <p class="error-text">{{ errors.firstName }}</p>
+          {% endif %}
+          </div>
+          <div class="field">
+          <label class="label">Last Name</label>
+          <input type="text" name="lastName" placeholder="enter your last name"/>
+          {% if errors.lastName %}
+           <p class="error-text">{{ errors.lastName }}</p>
+          {% endif %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+          <label class="label">E-Mail</label>
+          <input type="mail" name="email" placeholder="enter your e-mail"/>
+          {% if errors.email %}
+           <p class="error-text">{{ errors.email }}</p>
+          {% endif %}
+          </div>
+          <div class="field">
+          <label class="label">Phone Number</label>
+          <input type="number" name="number" placeholder="enter your phone number"/>
+          {% if errors.number %}
+           <p class="error-text">{{ errors.number }}</p>
+          {% endif %}
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Meassage</label>
+          <textarea name="message" placeholder="enter your message here"></textarea>
+          {% if errors.message %}
+           <p class="error-text">{{ errors.message }}</p>
+          {% endif %}
+        </div>
+        <button type="submit" class="button-form">Submit</button>
+      </form>
+    </div>
+
+  </body>
+</html>

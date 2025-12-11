@@ -42,3 +42,77 @@ button{
 button:hover{
     background-color: #444444;
 }
+
+.form-container{
+    width:600px;
+    padding:20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.success-message{
+    color: green;
+    text-align: center;
+}
+
+.contactus{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row{
+    display: flex;
+    gap:30px;
+    margin-bottom: 15px;
+}
+
+.row div{
+    flex:1;
+}
+
+.label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    flex-direction: column;
+}
+
+.form-container input, 
+.form-container textarea{
+    width:95%;
+    padding:8px;
+    font-size: 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-container textarea{
+    height: 100px;
+}
+
+.button-form{
+    background: #4caf50;
+    padding:10px 20px;
+    color: white;
+    border:none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.button-form:hover{
+    background: #45a049;
+}
+
+.field{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.error-text{
+    color:red;
+}
